@@ -1,0 +1,35 @@
+{
+  "name": "pi-quota-widget",
+  "version": "0.1.0",
+  "description": "Usage & quota widget for the pi coding agent — GLM Coding Plan quota for China (open.bigmodel.cn) and global (z.ai), session token stats, and optional multi-provider balances. Works with zai-coding-cn accounts out of the box.",
+  "type": "module",
+  "license": "MIT",
+  "author": "GuoZiJing <gouzijing0821@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gouzijing0821/pi-quota-widget.git"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "pi-coding-agent",
+    "glm",
+    "glm-coding-plan",
+    "zai",
+    "zai-coding-cn",
+    "zhipu",
+    "bigmodel",
+    "coding-plan",
+    "quota",
+    "usage",
+    "balance",
+    "deepseek",
+    "moonshot",
+    "openrouter",
+    "siliconflow"
+  ],
+  "pi": {
+    "extensions": ["./extensions/usage.ts"]
+  }
+}
