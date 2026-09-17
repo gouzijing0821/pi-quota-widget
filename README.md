@@ -15,16 +15,9 @@ A [pi coding agent](https://pi.dev) extension that shows a live usage & quota wi
 
 ## Why this package?
 
-Existing GLM quota extensions only support the **international** `api.z.ai` response format (quota entries typed `TOKENS_LIMIT`). Accounts on **GLM Coding Plan (China)** authenticate via `zai-coding-cn` against `open.bigmodel.cn`, and the API returns a different shape: quota entries typed **`CREDIT_LIMIT`** with a `unit` field (`3` = hour-based window, `6` = weekly). Popular packages currently fail on these accounts with errors like *"Z.ai usage endpoint returned no displayable data"*.
+GLM Coding Plan comes in two flavors: the international endpoint (`api.z.ai`) and the China endpoint (`open.bigmodel.cn`, provider id `zai-coding-cn`). Their APIs are similar but not identical — the China endpoint returns quota entries typed `CREDIT_LIMIT` with a `unit` field (`3` = hour-based window, `6` = weekly), while most existing tooling targets the international `TOKENS_LIMIT` format.
 
-This package renders the raw `limits[]` array without type filtering, so it works on both response shapes — verified against a real `zai-coding-cn` (Lite plan) account.
-
-| Package | China (`zai-coding-cn`) | Global (`zai`) |
-|---|---|---|
-| `@tian.zuo/pi-usage` | ❌ CREDIT_LIMIT not handled | ✅ |
-| `@beyona/pi-zai-usage` | ❌ no China endpoint | ✅ |
-| `pi-glm-usage` | ❌ no China endpoint | ✅ |
-| **pi-quota-widget** | ✅ | ✅ |
+pi-quota-widget renders the raw `limits[]` array without type filtering, so it works with **both** response shapes — verified against a real `zai-coding-cn` (Lite plan) account.
 
 ## Install
 
